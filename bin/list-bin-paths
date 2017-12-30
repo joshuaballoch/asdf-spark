@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#!/usr/bin/env bash
+# must print a space-separated list of directories on the install path with
+# bin-paths to include
+echo bin
