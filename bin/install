@@ -47,8 +47,14 @@ get_download_file_path() {
 
 get_download_url() {
   local version=$1
+  local default="https://www.apache.org/dist/spark/spark-${version}/spark-${version}-bin-hadoop2.7.tgz"
+  local fallback="https://archive.apache.org/dist/spark/spark-${version}/spark-${version}-bin-hadoop2.7.tgz"
 
-  echo "http://apache.claz.org/spark/spark-${version}/spark-${version}-bin-hadoop2.7.tgz"
+  if wget -q --spider "$default"; then
+    echo $default
+  else
+    echo $fallback
+  fi;
 }
 
 
