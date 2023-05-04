@@ -63,7 +63,7 @@ get_hadoop_version() {
   if (( ${version:0:1} >= 3 )); then
     echo "2"
   else
-      echo "2.7"
+    echo "2.7"
   fi;
 }
 
